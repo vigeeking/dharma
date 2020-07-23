@@ -1,0 +1,72 @@
+{
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "inferenceAccelerators": [],
+    "containerDefinitions": [
+        {
+            "name": "Mattermost",
+            "image": "mattermost/mattermost-team-edition",
+            "memoryReservation": "2000",
+            "resourceRequirements": null,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": "80",
+                    "protocol": "tcp"
+                },
+                {
+                    "containerPort": "443",
+                    "protocol": "tcp"
+                }
+            ],
+            "environment": null,
+            "secrets": null,
+            "mountPoints": null,
+            "volumesFrom": null,
+            "hostname": null,
+            "user": null,
+            "workingDirectory": null,
+            "extraHosts": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/Mattermost",
+                    "awslogs-region": "us-east-2",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "ulimits": null,
+            "dockerLabels": null,
+            "dependsOn": null,
+            "repositoryCredentials": {
+                "credentialsParameter": ""
+            }
+        }
+    ],
+    "volumes": [
+        {
+            "host": {},
+            "name": "web"
+        },
+        {
+            "host": {},
+            "name": "db"
+        },
+        {
+            "host": {},
+            "name": "app"
+        },
+        {
+            "host": {},
+            "name": "localtime"
+        }
+    ],
+    "networkMode": "awsvpc",
+    "memory": "2048",
+    "cpu": "1024",
+    "executionRoleArn": "arn:aws:iam::053588923411:role/ecsTaskExecutionRole",
+    "family": "Mattermost",
+    "taskRoleArn": "arn:aws:iam::053588923411:role/ecsTaskExecutionRole",
+    "tags": []
+}
