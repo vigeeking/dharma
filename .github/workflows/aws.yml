@@ -41,7 +41,8 @@ jobs:
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
-        task-definition: ${{ steps.task-def.output deploy:
+        task-definition: ${{ steps.task-def.output 
+        deploy:
           name: Deploy
           runs-on: ubuntu-latest
           steps:
