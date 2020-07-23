@@ -1,5 +1,6 @@
 on:
-  types: [created]
+  release:
+    types: [created]
 
 name: Deploy to Amazon ECS
 uses: aws-actions/amazon-ecs-deploy-task-definition@v1
