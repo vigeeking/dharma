@@ -1,6 +1,7 @@
 on:
-  release:
-    types: [created]
+  push:
+  pull_request:
+    branches: [master]
 
 name: Deploy to Amazon ECS
 uses: aws-actions/amazon-ecs-deploy-task-definition@v1
