@@ -4,15 +4,7 @@ on:
     branches: [master]
 
 name: Deploy to Amazon ECS
-uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-with:
-  task-definition: mattermost.json
-  service: Mattermost-service
-  cluster: vigeeking
-  wait-for-service-stability: true
-  codedeploy-appspec: appspec.json
-  codedeploy-application: my-codedeploy-application
-  codedeploy-deployment-group: my-codedeploy-deployment-group
+
 jobs:
 
   deploy:
