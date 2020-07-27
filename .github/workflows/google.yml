@@ -20,14 +20,11 @@ env:
   GKE_EMAIL: ${{ secrets.GKE_EMAIL }}
   GITHUB_SHA: ${{ github.sha }}
   GKE_ZONE: us-west1-a
-  GKE_CLUSTER: mattermost
-  IMAGE: mattermost/mattermost-team-edition
-  REGISTRY_HOSTNAME: hub.docker.com
-  DEPLOYMENT_NAME: mattermost
+  GKE_CLUSTER: example-gke-cluster
 
 jobs:
   setup-build-publish-deploy:
-    name: Setup, Build, Publish, and Deploy
+    name: deployMattermost
     runs-on: ubuntu-latest
     steps:
 
